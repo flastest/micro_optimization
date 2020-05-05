@@ -24,7 +24,7 @@ What I did to optimize this was iterate through the `char*` from the front. I do
 
 
 | algorithm | minimum time after 1000 trials (ms) |
----------------------------------------------------
+|-----------|-------------------------------------|
 |   eitan   |            31                       |
 |   naive   |            16                       |
 |   quick   |            5                        |
