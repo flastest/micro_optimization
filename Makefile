@@ -1,9 +1,12 @@
 CXX=g++
-CXXFLAGS=-Wall -Wextra -Werror -std=c++17 -O3
+CXXFLAGS=-Wall -Wextra -Werror -std=c++17 -O3 -Ofast
 LDFLAGS=$(CXXFLAGS)
 OBJ=$(SRC:.cc=.o)
 
-all:  quick_converter naive_converter eitan_converter
+all:  quick_converter naive_converter eitan_converter billy_joel 
+
+billy_joel: billy_joel_version.o driver.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 quick_converter: quick_converter.o driver.o
 	$(CXX) $(CXXFLAGS) -o $@ $^

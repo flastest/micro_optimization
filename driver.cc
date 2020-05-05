@@ -70,14 +70,14 @@ int main(int argc, char *argv[])
     convert_all(nlines, lines, nums);
     auto endTime = std::chrono::high_resolution_clock::now();
     //double t = (double)(clock() - t0) / CLOCKS_PER_SEC;
-    float t = std::chrono::duration_cast<std::chrono::milliseconds>( endTime - startTime ).count();
+    float t = std::chrono::duration_cast<std::chrono::microseconds>( endTime - startTime ).count();
     assert(checksum(nums, nlines) == QUOTES_CSUM);
     if (t < min_t) {
       min_t = t;
     }
   }
 
-  printf("Best run time overall: %gms\n", min_t);
+  printf("Best run time overall: %gus\n", min_t);
   free(nums);
   free(lines);
   free(data);

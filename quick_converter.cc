@@ -5,7 +5,6 @@
 #include "converter.hh"
 #include <stdlib.h>
 
-#include <iostream> //for debug
 
 //naive impementation: just go through the chars and subtract '0' from them
 // same thing this time, but different way of adding it to the temp int.
