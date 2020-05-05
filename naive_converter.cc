@@ -1,12 +1,11 @@
 /*
- * Trivial implementation of converter function.
- * You may override this file or create your own.
+ * A naive converter that converts chars to strings by subtracting the char '0'
+ * from every char to get an accurate int representation. It iterates through
+ * each char* back to front, each time multiplying the new char by 10. 
  */
 #include "converter.hh"
 #include <string.h> // for strlen
 #include <stdlib.h>
-
-#include <iostream> //for debug
 
 //naive impementation: just go through the chars and subtract '0' from them
 void convert_all(unsigned nlines, char *lines[], quote_t nums[])
@@ -15,10 +14,8 @@ void convert_all(unsigned nlines, char *lines[], quote_t nums[])
   	uint32_t temp = 0;
   	int length = strlen(lines[i]);
   	unsigned tensplace = 1;
-  	//std::cout <<"line " <<i<<" is " <<lines[i]<<std::endl;
   	for (int c = length - 1; c >= 0; c--)
   	{
-  		//std::cout <<"wassupe" <<std::endl;
   		temp += tensplace * (lines[i][c] - '0');
   		tensplace *= 10;
   	}
