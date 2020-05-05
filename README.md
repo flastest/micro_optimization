@@ -20,7 +20,7 @@ This proved to be twice as quick as atoi on my computer.
 
 ### Quick converter
 
-What I did to optimize this was iterate through the `char*` from the front. I don't want to waste time finding the length of the `char*` and iterating backwards from there! I edited the algorithm to multiply temp by ten every time a new non `'\0'` was added. Just making this one change reduced the time this algorithm took by 
+What I did to optimize this was iterate through the `char*` from the front. I don't want to waste time finding the length of the `char*` and iterating backwards from there! I edited the algorithm to multiply temp by ten every time a new non `'\0'` was added. Just making this one change reduced the time my algorithm took to 1/6th the original atoi time!
 
 
 | algorithm | minimum time after 1000 trials (ms) |
