@@ -23,6 +23,16 @@ This proved to be twice as quick as atoi on my computer.
 What I did to optimize this was iterate through the `char*` from the front. I don't want to waste time finding the length of the `char*` and iterating backwards from there! I edited the algorithm to multiply temp by ten every time a new non `'\0'` was added. Just making this one change reduced the time my algorithm took to 1/6th the original atoi time!
 
 
+### Billy Joel Version
+
+This one is named after my one role model, Billy Joel. For this, I wanted to cut down on the time it took to do multiplication by having a table ready of all the numbers that could possibly exist mapped to what they'd be if they were multiplied by ten. This comes with a little bit of overhead, but you only need to generate this table once. 
+
+Then I realized that there are a ton of numbers.
+
+
+I was also gonna just try to do something involving conversion and left shifting to multiply by ten, but then i started thinking about it, and realized that ...hm ... let me think.
+
+
 | algorithm | minimum time after 1000 trials (ms) |
 |-----------|-------------------------------------|
 |   eitan   |            31                       |
