@@ -7,7 +7,7 @@ These are different implementations of a converter that quickly converts char* t
 
 #### Makefile
 
-I made a makefile because I took 221 when they still taught that. Makefiles are the last beauty in this covid-ridden world. Make produces a naive_converter, quick_converter, and an eitan_converter. The names are pretty self explanatory, the eitan_converter is the original naïvest implementation (which uses atoi) that I kept around to compare my naive_converter to.
+I made a makefile because I took 221 when they still taught that. Makefiles are the last beauty in this covid-ridden world. Make produces a naive_converter, quick_converter, and an eitan_converter. The names are pretty self explanatory, the eitan_converter is the original naïvest implementation (which uses atoi) that I kept around to compare my naive_converter to. I alost added the billy_joel converter which was supposed to be an improvement on quick_converter, but it didn't actually make the time much better.
 
 
 ### Naïve converter
@@ -29,8 +29,7 @@ This one is named after my one role model, Billy Joel. For this, I wanted to cut
 
 Then I realized that there are a ton of numbers.
 
-
-I was also gonna just try to do something involving conversion and left shifting to multiply by ten, but then i started thinking about it, and realized that ...hm ... let me think.
+I was gonna just try to do something involving left shifting to avoid multiplication, but then i started thinking about it, and realized that that was really unreasonable. how can I multiply by ten if left shifting only multiplies by 2? Then I was like, "duh, you left shift it 3 times to multiply the original number by 8, and add the original number left shifted once (multiply by 2) to bring the total to 10 times the original number." I fully eliminated all of the multiplication, but it only made things slower!! I looked at it through godbolt, and saw that the compiler with -O3 (and -Ofast for good measure) was converting my left shifts into multiplication!! I bet if I wrote this in assembly, it might be faster... but for now, it was a failure :(
 
 
 | algorithm | minimum time after 1000 trials (ms) |
@@ -38,6 +37,7 @@ I was also gonna just try to do something involving conversion and left shifting
 |   eitan   |            31                       |
 |   naive   |            16                       |
 |   quick   |            5                        |
+|   billy   |            5                        |
 
 ### Other edits
 
